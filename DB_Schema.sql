@@ -180,3 +180,17 @@ CREATE TABLE `proposes` (
   REFERENCES `SERVICE` (`serv_id`) 
   ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `log_OFFERS`;
+CREATE TABLE `log_OFFERS` (
+  `id_log_offers` INT NOT NULL AUTO_INCREMENT,
+  `action` VARCHAR(45) NOT NULL,
+  `off_id` INT NOT NULL,
+  `off_name` VARCHAR(45) NOT NULL,
+  `off_desc` VARCHAR(45) NOT NULL,
+  `off_discount` FLOAT NOT NULL,
+  `changed_on` DATETIME NOT NULL,
+  PRIMARY KEY (`id_log_offers`),
+  UNIQUE INDEX `id_log_offers_UNIQUE` (`id_log_offers` ASC)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
